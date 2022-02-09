@@ -1,9 +1,11 @@
-  //ARQUIVOS DO GAME
+  
+  // arquivos importados
   let spriteDoGuerreiro = "https://i.pinimg.com/originals/30/d4/9b/30d49b65ee7bf655a4bfbfa957d02d68.gif";
   let spriteDoMago = "https://i.pinimg.com/originals/b6/40/30/b64030bf5b203da3e619dedfa0180f33.gif";
-  let meuPersonagem;
-
+  
+  //ARQUIVOS DO GAME
   const magoBase = {
+    nome: 'mago',
     vida: 130,
     inteligencia: 45,
     forca: 5,
@@ -13,6 +15,7 @@
     },
   };
   const guerreiroBase = {
+    nome: 'guerreiro',
     vida: 200,
     inteligencia: 5,
     forca: 30,
@@ -30,8 +33,9 @@
       investida: { danoAD: 2 },
     },
   };
+  let meuPersonagem;
   
-  // LOGICA DO GAME
+  // LINHA DO TEMPO
   const fraseBeta = document.getElementsByClassName('frase-beta')[0];
   const fraseDaDeusa = document.getElementsByClassName('frase-da-deusa')[0];
 
@@ -48,6 +52,8 @@
   const continueGuerreiro = document.getElementsByClassName('continue-guerreiro')[0]; 
   const continueMago = document.getElementsByClassName('continue-mago')[0];
 
+// ATO 0
+// ATO 1 - FRASE DE BOAS VINDAS
   const comecar = () => {
     fraseBeta.innerHTML = '';
     boxStart.style.display = 'none';
@@ -55,26 +61,31 @@
     fraseDaDeusa.innerHTML = 'Para começar, escolha seu duelista!';
   };
 
+// ATO 2 - GUERREIRO
   const selecionaGuerreiro = () => {
     fraseDaDeusa.innerHTML = "Você escolheu o Guerreiro! Um duelista que usará sua força e constituição para vencer a batalha!";
     boxEscolhaDeDuelista.style.display = 'none';
-    meuPersonagem = guerreiroBase;
+    meuPersonagem = Object.assign({}, guerreiroBase);
     guerreiroSelect.style.display = 'flex';
   };
+
+// ATO 2 - MAGO
   const selecionaMago = () => {
     fraseDaDeusa.innerHTML = "Você escolheu o Mago! Um duelista que usará sua inteligência e sabedoria para vencer a batalha!";
     boxEscolhaDeDuelista.style.display = 'none';
-    meuPersonagem = magoBase;
+    meuPersonagem = Object.assign({}, magoBase);
     magoSelect.style.display = 'flex';
   };
+
+//ATO 3
   const mudaDisplay = () => {
     guerreiroSelect.style.display = 'none';
     magoSelect.style.display = 'none';
     fraseDaDeusa.innerHTML = "Fim da beta 1.0"
-  };
+    console.log(meuPersonagem);
+};
 
-
-  // CRIAR BOTOES SEMPRE DEPOIS DO CÓDIGO
+// CRIAR BOTOES SEMPRE DEPOIS DO CÓDIGO
   botaoGuerreiro.addEventListener("click", selecionaGuerreiro);
   botaoMago.addEventListener("click", selecionaMago);
   botaoStart.addEventListener("click", comecar);

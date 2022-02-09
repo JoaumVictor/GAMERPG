@@ -1,0 +1,122 @@
+@import url('http://fonts.cdnfonts.com/css/sf-pixelate');              
+* {
+    box-sizing: border-box;
+    font-family: 'SF Pixelate', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(4, 2, 4);
+    color: white;
+}
+
+.marcar {
+    border: 3px solid red;
+}
+
+.separar {
+    margin: 10px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 100vh;
+}
+
+.box-da-deusa {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    font-size: 20px;
+}
+
+.sprite-deusa {
+    width: 300px;
+}
+
+.escolha-de-duelista {
+    display: none;
+    width: 400px;
+    height: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.botao {
+    padding: 5px;
+}
+
+.start {
+    display: flex;
+}
+
+.guerreiro-select {
+    display: none;
+}
+
+.mago-select {
+    display: none;    
+}
+
+.sprite {
+    width: 230px;
+}
+
+.arena {
+    display: none;
+    flex-flow: column nowrap;
+    border: 3px solid purple;
+    width: 90%;
+    height: 400px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.gif2-img {
+    transform: scaleX(-1);
+}
+
+.arena-divisao {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.vida {
+    color: red;
+    font-size: 22px;
+}
+
+.constituicao {
+    color: grey;
+    font-size: 22px;  
+}
+
+.mana {
+    color: blue;
+    font-size: 22px;
+}
+
+.linha {
+display: flex;
+flex-wrap: nowrap;
+align-items: center;
+}
+
+.hub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.btn-hub {
+font-size: 25px;
+width: 300px;
+height: 70px;
+margin-left: 30px;
+margin-right: 30px;
+}
