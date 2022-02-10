@@ -24,6 +24,7 @@ const HTML = {
   mana2: document.getElementsByClassName('mn2')[0],
   ataqueBasico: document.getElementsByClassName('btn-ataque')[0],
   habilidadeBasica: document.getElementsByClassName('btn-habilidade')[0],
+  champion: document.querySelector('#champion'),
 };
 
 HTML.imgDaDeusa.src = 'https://c.tenor.com/T5Z2YpZMti0AAAAC/libra-pixels.gif';

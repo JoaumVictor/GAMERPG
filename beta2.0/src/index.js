@@ -76,7 +76,8 @@ const calculaDano1 = () => dado(player1.dadoDeAtaque)
 
 const youWin = () => {
   player2.vida = 0;
-  atualizarFaseDeCombate();
+  atualizarFaseDeCombate(); 
+  HTML.champion.play()
   return alert('Você Venceu!')
 }
 
