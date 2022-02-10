@@ -1,5 +1,5 @@
-import HTML from './src/HTML/HtmlDados.js';
-import PERSONAGENS from './src/Personagens/Personagens.js';
+import HTML from './HTML/HtmlDados.js';
+import PERSONAGENS from './PERSONAGENS/Personagens.js';
 
 // DADO
 const dado = (number) => Math.floor((Math.random() * number) + 1);
@@ -74,21 +74,28 @@ const atualizarFaseDeCombate = () => {
 // FUNÇÕES DE COMBATE
 const calculaDano1 = () => dado(player1.dadoDeAtaque)
 
+const youWin = () => {
+  player2.vida = 0;
+  atualizarFaseDeCombate();
+  return alert('Você Venceu!')
+}
+
+const passaDano = (resultado) => {
+  let msg = `Você tirou ${resultado}`
+  let dano = calculaDano1() + player1.forca;
+  if (resultado === 20) { dano *= 2; msg = 'ACERTO CRITICO!!!' }
+  player2.vida -= dano;
+  atualizarFaseDeCombate();
+  return player2.vida <= 0 ? youWin() : alert(`${msg}, seu ataque deu ${dano} de dano!`);
+}
+
 const tentativaDeAcerto1 = () => {
   const resultado = dado(20);
   const resistenciaDoOponente = player2.constituicao;
-  let danoCalculado = 0;
-  if (resultado < resistenciaDoOponente) alert(`Você tirou ${resultado}, e a constituição do oponente é ${resistenciaDoOponente}, você errou!`);
-  danoCalculado = calculaDano1() + player1.forca;
-  if (resultado === 20) { danoCalculado *= 2 }
-  player2.vida -= danoCalculado;
-  atualizarFaseDeCombate();
-  if (player2.vida <= 0) {
-    player2.vida = 0;
-    atualizarFaseDeCombate();
-    return alert('Você Venceu!')
+  if (resultado < resistenciaDoOponente) {
+    return alert(`Você tirou ${resultado}, e a constituição do oponente é ${resistenciaDoOponente}, você errou!`);
   }
-  return alert(`Você tirou ${resultado}, e seu ataque deu ${danoCalculado} de dano!`);
+  return passaDano(resultado)
 };
 
 // CRIAR BOTOES SEMPRE DEPOIS DO CÓDIGO
