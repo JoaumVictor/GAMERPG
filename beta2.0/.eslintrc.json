@@ -4,15 +4,17 @@
     "commonjs": true,
     "es2021": true
   },
-  "extends": ["airbnb-base", "prettier", "prettier/react"],
-  "parser": "babel-eslint",
+  "extends": ["airbnb-base", "prettier"],
   "parserOptions": {
     "ecmaVersion": "latest"
   },
+  "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error",
-    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "import/prefer-default-export": "off",
-    "jsx-quotes": ["error", "prefer-single"]
+    "jsx-quotes": ["error", "prefer-single"],
+    "no-alert": "off",
+    "no-console": "off",
+    "import/no-unresolved": 0,
+    "import/extensions": [".js", ".jsx", ".json", ".ts", ".tsx"]
   }
 }

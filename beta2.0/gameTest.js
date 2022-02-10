@@ -1,5 +1,3 @@
-/* eslint-disable no-alert */
-/* eslint-disable import/extensions */
 import HTML from './src/HTML/HtmlDados.js';
 import PERSONAGENS from './src/Personagens/Personagens.js';
 
@@ -88,7 +86,7 @@ const tentativaDeAcerto1 = () => {
   if (player2.vida <= 0) {
     player2.vida = 0;
     atualizarFaseDeCombate();
-    return alert('Você Venceu!');
+    return alert('Você Venceu!')
   }
   return alert(`Você tirou ${resultado}, e seu ataque deu ${danoCalculado} de dano!`);
 };
@@ -99,4 +97,4 @@ HTML.botaoMago.addEventListener('click', selecionaMago);
 HTML.botaoStart.addEventListener('click', comecar);
 HTML.continueGuerreiro.addEventListener('click', mudaDisplay);
 HTML.continueMago.addEventListener('click', mudaDisplay);
-HTML.ataqueBasico.addEventListener('click', tentativaDeAcerto1);
+HTML.ataqueBasico.addEventListener('click', tentativaDeAcerto1)
