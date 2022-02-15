@@ -1,0 +1,21 @@
+@import url('http://fonts.cdnfonts.com/css/sf-pixelate');  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0px;
+  background-color: black;
+  color: white;
+}
+
+.marcar {
+  border: 3px solid red;
+}
+
+.font-branco {
+  color: white;
+  font-size: 20px;
+}
+
+.font-pixel {
+  font-family: 'SF Pixelate', sans-serif;
+}

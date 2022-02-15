@@ -1,0 +1,3 @@
+Bem vindo a beta3 do meu game ( Mystic Journey In Pixel ).
+Estou criando esse game para adicionar ao meu portfólio durante meu curso na Trybe...
+A beta 1 e 2 foram testes de idéias que fui tendo.
